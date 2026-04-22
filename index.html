@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Umer Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 50px;
+      background: #020617;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: #38bdf8;
+      margin-left: 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+    }
+
+    .hero p {
+      margin: 10px 0;
+      color: #94a3b8;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #38bdf8;
+      border: none;
+      color: black;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #0ea5e9;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .services {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      width: 220px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      background: #334155;
+    }
+
+    input, textarea {
+      padding: 10px;
+      width: 260px;
+      margin: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<header>
+  <h2>Umer</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>I Build Clean Websites</h1>
+  <p>Modern • Simple • Fast</p>
+  <button onclick="scrollToContact()">Hire Me</button>
+</div>
+
+<section id="services">
+  <h2>My Services</h2>
+
+  <div class="services">
+    <div class="card">Portfolio Website</div>
+    <div class="card">Business Website</div>
+    <div class="card">Web Apps</div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+
+  <input type="text" id="name" placeholder="Your Name"><br>
+  <textarea id="msg" placeholder="Your Message"></textarea><br>
+
+  <button onclick="sendMessage()">Send</button>
+
+  <p id="result"></p>
+</section>
+
+<footer>
+  <p>© 2026 Umer</p>
+</footer>
+
+<script>
+function sendMessage() {
+  var name = document.getElementById("name").value;
+  var msg = document.getElementById("msg").value;
+
+  if (name === "" || msg === "") {
+    alert("Fill all fields");
+  } else {
+    document.getElementById("result").innerHTML =
+      "Thanks " + name + "! Message sent.";
+  }
+}
+
+function scrollToContact() {
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>
